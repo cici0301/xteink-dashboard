@@ -38,7 +38,7 @@ a { color:#4e79a7; text-decoration:none; }
 <div class="kpi-card c3"><div class="l">确认合作数</div><div class="v" id="k2">-</div><div class="s" id="s2"></div></div>
 <div class="kpi-card c4"><div class="l">选中率</div><div class="v" id="k3">-</div><div class="s" id="s3"></div></div>
 <div class="kpi-card c5"><div class="l">对客总额</div><div class="v" id="k4">-</div><div class="s">USD</div></div>
-<div class="kpi-card c6"><div class="l">总利润</div><div class="v" id="k5">-</div><div class="s" id="s5"></div></div>
+<div class="kpi-card c6"><div class="l">总利润 | 利润率</div><div class="v" id="k5">-</div><div class="s" id="s5"></div></div>
 </div>
 <div class="row">
 <div class="card"><h3>确认合作明细（<span id="cc">0</span> 笔）</h3>
@@ -58,7 +58,7 @@ document.getElementById('k3').textContent = D.summary.selectedRate + '%';
 document.getElementById('s3').textContent = D.summary.totalSelected + '/' + D.summary.totalSubmitted;
 document.getElementById('k4').textContent = '$' + D.summary.confTotalClient.toLocaleString();
 document.getElementById('k5').textContent = '$' + D.summary.confTotalProfit.toLocaleString();
-document.getElementById('s5').textContent = D.summary.confAvgRate + '% 利润率';
+document.getElementById('s5').textContent = '利润率 ' + D.summary.confAvgRate + '%';
 document.getElementById('cc').textContent = D.confirmed.length;
 var ch=''; D.confirmed.forEach(function(c){ ch += '<tr><td><a href="' + c.link + '" target="_blank">@' + c.handle + '</a></td><td style="text-align:right">$' + c.clientPrice.toLocaleString() + '</td><td style="text-align:right">$' + c.finalCost.toLocaleString() + '</td><td style="text-align:right;color:#59a14f;font-weight:600">$' + c.profit.toLocaleString() + '</td><td style="text-align:right">' + c.profitRate + '%</td></tr>'; });
 document.getElementById('ct').innerHTML = ch;
